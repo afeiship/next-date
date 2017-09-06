@@ -19,10 +19,9 @@
       init: function(inString){},
       normalize: function(){},
       format: function(){},
-      now: function(){},
-      compare: function(){},
-      add: function(){},
-      sub: function(){}
+      now: function(){
+        return Date.now() || +(new Date());
+      }
     }
   });
 
