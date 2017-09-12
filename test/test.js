@@ -12,4 +12,11 @@ describe('next-date', function () {
     assert.equal( NxDate.format(str,'yyyy年mm月dd日'), '2017年09月12日');
   });
 
+
+  it('date 2016-02-28T00:00:00 ', function () {
+    var str = '2016-02-28T00:00:00';
+
+    assert.equal( NxDate.format(str,'isoDate'), '2016-02-28');
+  });
+
 });

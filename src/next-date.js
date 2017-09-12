@@ -4,8 +4,10 @@
   var nx = global.nx || require('next-js-core2');
   var dateFormat = require('dateformat');
   var _ = require('next-is');
-  var REPLACE_RE = /-/g;
+  var REPLACE_RE1 = /[A-Z]/g;
+  var REPLACE_RE2 = /-/g;
   var DATE_DASH = '/';
+  var DATE_SPACE = ' ';
   var STRING = 'string';
 
   /**
@@ -29,7 +31,9 @@
           case inTarget instanceof Date:
             return inTarget;
           case typeof inTarget === STRING:
-            return new Date( inTarget.replace(REPLACE_RE, DATE_DASH) );
+            return new Date(
+              inTarget.replace(REPLACE_RE1, DATE_DASH)
+                      .replace(REPLACE_RE2, DATE_SPACE) );
           default:
             return new Date(inTarget);
         }
