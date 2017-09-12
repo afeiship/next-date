@@ -21,9 +21,11 @@
     "gulp-sass": "^2.3.2",
     "gulp-size": "^2.1.0",
     "gulp-uglify": "^2.1.2",
+    "mocha": "^3.5.3",
     "yargs": "^4.7.1"
   },
   "dependencies": {
-    "dateformat": "^2.0.0"
+    "dateformat": "^2.0.0",
+    "next-js-core2": "github:afeiship/next-js-core2"
   }
 }
