@@ -32,8 +32,9 @@
             return inTarget;
           case typeof inTarget === STRING:
             return new Date(
-              inTarget.replace(REPLACE_RE1, DATE_DASH)
-                      .replace(REPLACE_RE2, DATE_SPACE) );
+              inTarget.replace(REPLACE_RE1, DATE_SPACE)
+                      .replace(REPLACE_RE2, DATE_DASH)
+            );
           default:
             return new Date(inTarget);
         }
