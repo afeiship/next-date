@@ -2,6 +2,7 @@
 
   var global = global || window || self || this;
   var nx = global.nx || require('next-js-core2');
+  var dateFormat = require('dateformat');
 
   /**
    * dateStr.replace(/\s/g,'T').replace(/\//g,'-');
