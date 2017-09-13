@@ -3,7 +3,6 @@
   var global = global || this || self || window;
   var nx = global.nx || require('next-js-core2');
   var dateFormat = require('dateformat');
-  var _ = require('next-is');
   var REPLACE_RE1 = /[A-Z]/g;
   var REPLACE_RE2 = /-/g;
   var DATE_DASH = '/';
