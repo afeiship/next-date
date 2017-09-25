@@ -25,7 +25,7 @@
       timestamp: function(){
         return Date.now() || +(new Date());
       },
-      normalize: function(inTarget){
+      create: function(inTarget){
         switch(true){
           case inTarget instanceof Date:
             return inTarget;
@@ -43,7 +43,7 @@
         return dateFormat(now,inFmt);
       },
       format: function(inTarget,inFmt){
-        var target = this.normalize(inTarget);
+        var target = this.create(inTarget);
         return dateFormat(target,inFmt);
       }
     }
