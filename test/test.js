@@ -21,8 +21,10 @@ describe('next-date', function () {
 
 
   it('date compare',function(){
-    var date1 = '2017-09-27T11:03:01.014932Z';
-    var date2 = NxDate.create();
+    var date1 = +NxDate.create('2017-09-27T11:03:01.014932Z');
+    var date2 = +NxDate.create('2017-09-24T11:03:01.014932Z');
+
+    assert.equal(date1>date2, true);
   });
 
 
