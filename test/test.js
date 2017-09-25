@@ -19,4 +19,11 @@ describe('next-date', function () {
     assert.equal( NxDate.format(str,'isoDate'), '2016-02-28');
   });
 
+
+  it('date compare',function(){
+    var date1 = '2017-09-27T11:03:01.014932Z';
+    var date2 = NxDate.create();
+  });
+
+
 });

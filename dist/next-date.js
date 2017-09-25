@@ -34,6 +34,8 @@
               inTarget.replace(REPLACE_RE1, DATE_SPACE)
                       .replace(REPLACE_RE2, DATE_DASH)
             );
+          case inTarget == null:
+            return new Date();
           default:
             return new Date(inTarget);
         }
