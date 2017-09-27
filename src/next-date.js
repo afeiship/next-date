@@ -2,6 +2,7 @@
 
   var global = global || this || self || window;
   var nx = global.nx || require('next-js-core2');
+  var _ = nx.compare ||  require('next-compare');
   var dateFormat = require('dateformat');
   var REPLACE_RE1 = /[A-Z]/g;
   var REPLACE_RE2 = /-/g;
@@ -41,10 +42,9 @@
         }
       },
       compare: function(inTarget1, inTarget2){
-        var instance1 = +this.create(inTarget1);
-        var instance2 = +this.create(inTarget2);
-        var difference = instance1 - instance2;
-        return difference === 0 ? 0 : difference / Math.abs(difference);
+        var timestamp1 = +this.create(inTarget1);
+        var timestamp2 = +this.create(inTarget2);
+        return nx.compare(timestamp1, timestamp2);
       },
       now: function(inFmt){
         var now = new Date();

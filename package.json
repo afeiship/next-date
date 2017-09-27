@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "dateformat": "^2.0.0",
+    "next-compare": "github:afeiship/next-compare",
     "next-js-core2": "github:afeiship/next-js-core2"
   }
 }
