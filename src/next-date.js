@@ -40,6 +40,14 @@
             return new Date(inTarget);
         }
       },
+      compare: function(inTarget1, inTarget2){
+        var instance1 = +this.create(inTarget1);
+        var instance2 = +this.create(inTarget2);
+        var difference = instance1 - instance2;
+        return difference === 0
+          ? 0
+          : difference / Math.abs(difference);
+      },
       now: function(inFmt){
         var now = new Date();
         return dateFormat(now,inFmt);
