@@ -9,6 +9,10 @@
   var DATE_DASH = '/';
   var DATE_SPACE = ' ';
   var STRING = 'string';
+  var ONE_DAY = 1000 * 60 * 60 * 24;
+  var ONE_MINUTE = 1000 * 60;
+
+
 
   /**
    * dateStr.replace(/\s/g,'T').replace(/\//g,'-');
@@ -23,8 +27,26 @@
 
   var NxDate = nx.declare('nx.Date', {
     statics:{
-      timestamp: function(){
+      now: function(){
         return Date.now() || +(new Date());
+      },
+      parse: function(inTimestamp){
+        var years = parseInt(inTimestamp / ONE_DAY / 365 , 10);
+        var months = parseInt(inTimestamp / ONE_DAY / 30 , 10);
+        var weeks = parseInt(inTimestamp / ONE_DAY / 7 , 10);
+        var days = parseInt(inTimestamp / ONE_DAY , 10);
+        var hours = parseInt(inTimestamp / ONE_MINUTE / 60 % 24 , 10);
+        var minutes = parseInt(inTimestamp / ONE_MINUTE % 60, 10);
+        var seconds = parseInt(inTimestamp / 1000 % 60, 10);
+        return {
+          year: years,
+          month: months,
+          week: weeks,
+          day: days,
+          hour: hours,
+          minute: minutes,
+          second: seconds
+        }
       },
       create: function(inTarget){
         switch(true){
@@ -45,10 +67,6 @@
         var timestamp1 = +this.create(inTarget1);
         var timestamp2 = +this.create(inTarget2);
         return nx.compare(timestamp1, timestamp2);
-      },
-      now: function(inFmt){
-        var now = new Date();
-        return dateFormat(now,inFmt);
       },
       format: function(inTarget,inFmt){
         var target = this.create(inTarget);
