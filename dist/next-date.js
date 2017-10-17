@@ -31,13 +31,14 @@
         return Date.now() || +(new Date());
       },
       parse: function(inTimestamp){
-        var years = parseInt(inTimestamp / ONE_DAY / 365 , 10);
-        var months = parseInt(inTimestamp / ONE_DAY / 30 , 10);
-        var weeks = parseInt(inTimestamp / ONE_DAY / 7 , 10);
-        var days = parseInt(inTimestamp / ONE_DAY , 10);
+        var years = Math.floor(inTimestamp / ONE_DAY / 365 );
+        var months = Math.floor(inTimestamp / ONE_DAY / 30 );
+        var weeks = Math.floor(inTimestamp / ONE_DAY / 7);
+        var days = Math.floor(inTimestamp / ONE_DAY);
         var hours = parseInt(inTimestamp / ONE_MINUTE / 60 % 24 , 10);
         var minutes = parseInt(inTimestamp / ONE_MINUTE % 60, 10);
         var seconds = parseInt(inTimestamp / 1000 % 60, 10);
+        var micros = parseInt(inTimestamp % 10,10);
         return {
           year: years,
           month: months,
@@ -45,7 +46,8 @@
           day: days,
           hour: hours,
           minute: minutes,
-          second: seconds
+          second: seconds,
+          micro: micros
         }
       },
       create: function(inTarget){
