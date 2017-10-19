@@ -11,6 +11,7 @@
   var STRING = 'string';
   var ONE_DAY = 1000 * 60 * 60 * 24;
   var ONE_MINUTE = 1000 * 60;
+  var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
 
 
 
@@ -48,7 +49,7 @@
           minute: minutes,
           second: seconds,
           micro: micros
-        }
+        };
       },
       create: function(inTarget){
         switch(true){
@@ -72,7 +73,7 @@
       },
       format: function(inTarget,inFmt){
         var target = this.create(inTarget);
-        return dateFormat(target,inFmt);
+        return dateFormat(target,inFmt || DEFAULT_FORMAT);
       }
     }
   });
