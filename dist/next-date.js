@@ -9,6 +9,8 @@
   var DATE_DASH = '/';
   var DATE_SPACE = ' ';
   var STRING = 'string';
+  var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
+
 
 
   /**

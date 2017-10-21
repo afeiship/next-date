@@ -10,6 +10,7 @@ describe('next-date', function () {
     assert.equal( NxDate.format(str,'isoDate'), '2017-09-12');
     assert.equal( NxDate.format(str,'isoTime'), '14:03:52');
     assert.equal( NxDate.format(str,'yyyy年mm月dd日'), '2017年09月12日');
+    assert.equal( NxDate.format(str), '2017-09-12 14:03:52');
   });
 
 
