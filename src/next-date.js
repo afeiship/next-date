@@ -11,9 +11,6 @@
   var INVALID_DATE = 'Invalid Date';
 
 
-  //bug: 2017-10-20T10:13:24.003714Z in safari:
-
-
   /**
    * dateStr.replace(/\s/g,'T').replace(/\//g,'-');
    * http://www.cnblogs.com/Fooo/p/5284421.html
