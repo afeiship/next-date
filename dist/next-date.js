@@ -12,6 +12,8 @@
   var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
 
 
+  //bug: 2017-10-20T10:13:24.003714Z in safari:
+
 
   /**
    * dateStr.replace(/\s/g,'T').replace(/\//g,'-');
