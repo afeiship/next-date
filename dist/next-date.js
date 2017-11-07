@@ -4,12 +4,11 @@
   var nx = global.nx || require('next-js-core2');
   var _ = nx.compare ||  require('next-compare');
   var dateFormat = require('dateformat');
-  var REPLACE_RE1 = /[A-Z]/g;
-  var REPLACE_RE2 = /-/g;
+  var REPLACE_RE = /-/g;
   var DATE_DASH = '/';
-  var DATE_SPACE = ' ';
   var STRING = 'string';
   var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
+  var INVALID_DATE = 'Invalid Date';
 
 
   //bug: 2017-10-20T10:13:24.003714Z in safari:
@@ -36,10 +35,10 @@
           case inTarget instanceof Date:
             return inTarget;
           case typeof inTarget === STRING:
-            return new Date(
-              inTarget.replace(REPLACE_RE1, DATE_SPACE)
-                      .replace(REPLACE_RE2, DATE_DASH)
-            );
+            var date = new Date(inTarget);
+            return date.toString() === INVALID_DATE
+              ? new Date(inTarget.replace(REPLACE_RE, DATE_DASH))
+              : date;
           case inTarget == null:
             return new Date();
           default:
