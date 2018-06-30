@@ -1,6 +1,6 @@
 (function () {
 
-  var global = global || this || self || window;
+  var global = global || window || self || Function('return this')();
   var nx = global.nx || require('next-js-core2');
   var _ = nx.compare ||  require('next-compare');
   var dateFormat = require('dateformat');
@@ -9,9 +9,6 @@
   var STRING = 'string';
   var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
   var INVALID_DATE = 'Invalid Date';
-
-
-  //bug: 2017-10-20T10:13:24.003714Z in safari:
 
 
   /**
