@@ -7,13 +7,31 @@ npm install -S @feizheng/next-date
 ```
 
 ## apis
-| api | params | description   |
-|-----|--------|---------------|
-| get | -      | desc balabala |
+| api     | params | description           |
+| ------- | ------ | --------------------- |
+| now     | -      | Get timestamp.        |
+| create  | -      | Create data instance. |
+| compare | -      | Compare data.         |
+| format  | -      | Format date.          |
 
 ## usage
 ```js
 import NxDate from '@feizheng/next-date';
 
-// code goes here:
+//1. Timestamp:
+NxDate.now();
+
+//2. Get date instance:
+NxDate.create() 
+NxDate.create('2018-07-01 16:29:49');
+
+//3. Compare:
+NxDate.compare('2018-07-01 16:30:14','2018-07-01 16:30:19')
+// -1 | 0 | 1
+
+//4. format:
+NxDate.format(inTarget,'yyyy-mm-dd HH:MM:ss');
 ```
+
+## resources
+- https://github.com/felixge/node-dateformat
