@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/next-date",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enhanced date for next.",
   "homepage": "https://github.com/afeiship/next-date",
   "author": {
@@ -31,8 +31,8 @@
     "yargs": "^15.1.0"
   },
   "dependencies": {
-    "@feizheng/next-compare": "^1.0.0",
-    "@feizheng/next-js-core2": "^2.4.0"
+    "@feizheng/next-compare": "^1.0.1",
+    "@feizheng/next-js-core2": "^2.4.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
