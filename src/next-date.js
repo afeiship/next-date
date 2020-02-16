@@ -1,15 +1,13 @@
-(function () {
-
+(function() {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('next-js-core2');
-  var _ = nx.compare ||  require('next-compare');
+  var nx = global.nx || require('@feizheng/next-js-core2');
+  var nxCompare = nx.compare || require('@feizheng/next-compare');
   var dateFormat = require('dateformat');
   var REPLACE_RE = /-/g;
   var DATE_DASH = '/';
   var STRING = 'string';
   var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
   var INVALID_DATE = 'Invalid Date';
-
 
   /**
    * dateStr.replace(/\s/g,'T').replace(/\//g,'-');
@@ -23,12 +21,12 @@
    */
 
   var NxDate = nx.declare('nx.Date', {
-    statics:{
-      now: function(){
-        return Date.now() || +(new Date());
+    statics: {
+      now: function() {
+        return Date.now() || +new Date();
       },
-      create: function(inTarget){
-        switch(true){
+      create: function(inTarget) {
+        switch (true) {
           case inTarget instanceof Date:
             return inTarget;
           case typeof inTarget === STRING:
@@ -42,21 +40,19 @@
             return new Date(inTarget);
         }
       },
-      compare: function(inTarget1, inTarget2){
+      compare: function(inTarget1, inTarget2) {
         var timestamp1 = +this.create(inTarget1);
         var timestamp2 = +this.create(inTarget2);
-        return nx.compare(timestamp1, timestamp2);
+        return nxCompare(timestamp1, timestamp2);
       },
-      format: function(inTarget,inFmt){
+      format: function(inTarget, inFmt) {
         var target = this.create(inTarget);
-        return dateFormat(target,inFmt || DEFAULT_FORMAT);
+        return dateFormat(target, inFmt || DEFAULT_FORMAT);
       }
     }
   });
 
-
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = NxDate;
   }
-
-}());
+})();
