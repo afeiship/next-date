@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/next-date",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enhanced date for next.",
   "homepage": "https://github.com/afeiship/next-date",
   "author": {
@@ -15,10 +15,10 @@
   "license": "MIT",
   "devDependencies": {
     "@feizheng/gulp-pkg-header": "^1.0.2",
-    "@feizheng/rake-git": "^1.2.0",
+    "@feizheng/rake-git": "^1.2.1",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.0",
+    "gulp-concat": "^2.6.1",
     "gulp-debug": "^4.0.0",
     "gulp-ignore": "^3.0.0",
     "gulp-load-plugins": "^2.0.2",
