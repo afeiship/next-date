@@ -2,8 +2,8 @@
  * name: @feizheng/next-date
  * description: Enhanced date for next.
  * url: https://github.com/afeiship/next-date
- * version: 1.0.0
- * date: 2020-02-16 12:38:03
+ * version: 1.0.3
+ * date: 2020-02-21 10:42:15
  * license: MIT
  */
 
