@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@feizheng/next-js-core2');
   var nxCompare = nx.compare || require('@feizheng/next-compare');
@@ -22,10 +22,10 @@
 
   var NxDate = nx.declare('nx.Date', {
     statics: {
-      now: function() {
+      now: function () {
         return Date.now() || +new Date();
       },
-      create: function(inTarget) {
+      create: function (inTarget) {
         switch (true) {
           case inTarget instanceof Date:
             return inTarget;
@@ -40,14 +40,17 @@
             return new Date(inTarget);
         }
       },
-      compare: function(inTarget1, inTarget2) {
+      compare: function (inTarget1, inTarget2) {
         var timestamp1 = +this.create(inTarget1);
         var timestamp2 = +this.create(inTarget2);
         return nxCompare(timestamp1, timestamp2);
       },
-      format: function(inTarget, inFmt) {
+      format: function (inTarget, inFmt) {
         var target = this.create(inTarget);
         return dateFormat(target, inFmt || DEFAULT_FORMAT);
+      },
+      timezoneOffset: function () {
+        return -new Date().getTimezoneOffset() / 60;
       }
     }
   });

@@ -7,12 +7,13 @@ npm install -S @feizheng/next-date
 ```
 
 ## apis
-| api     | params | description           |
-| ------- | ------ | --------------------- |
-| now     | -      | Get timestamp.        |
-| create  | -      | Create data instance. |
-| compare | -      | Compare data.         |
-| format  | -      | Format date.          |
+| api            | params | description           |
+| -------------- | ------ | --------------------- |
+| now            | -      | Get timestamp.        |
+| create         | -      | Create data instance. |
+| compare        | -      | Compare data.         |
+| format         | -      | Format date.          |
+| timezoneOffset | -      | Get timezone offset.  |
 
 ## usage
 ```js
@@ -31,6 +32,9 @@ NxDate.compare('2018-07-01 16:30:14','2018-07-01 16:30:19')
 
 //4. format:
 NxDate.format(inTarget,'yyyy-mm-dd HH:MM:ss');
+
+// 5. timezone offset
+NxDate.timezoneOffset();
 ```
 
 ## resources
