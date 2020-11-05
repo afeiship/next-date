@@ -1,6 +1,11 @@
 # next-date
 > Enhanced date for next.
 
+[![version][version-image]][version-url]
+[![license][license-image]][license-url]
+[![size][size-image]][size-url]
+[![download][download-image]][download-url]
+
 ## installation
 ```bash
 npm install -S @feizheng/next-date
@@ -39,3 +44,18 @@ NxDate.timezoneOffset();
 
 ## resources
 - https://github.com/felixge/node-dateformat
+
+## license
+Code released under [the MIT license](https://github.com/afeiship/next-date/blob/master/LICENSE.txt).
+
+[version-image]: https://img.shields.io/npm/v/@feizheng/next-date
+[version-url]: https://npmjs.org/package/@feizheng/next-date
+
+[license-image]: https://img.shields.io/npm/l/@feizheng/next-date
+[license-url]: https://github.com/afeiship/next-date/blob/master/LICENSE.txt
+
+[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/next-date
+[size-url]: https://github.com/afeiship/next-date/blob/master/dist/next-date.min.js
+
+[download-image]: https://img.shields.io/npm/dm/@feizheng/next-date
+[download-url]: https://www.npmjs.com/package/@feizheng/next-date

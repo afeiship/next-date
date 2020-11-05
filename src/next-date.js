@@ -51,6 +51,11 @@
       },
       timezoneOffset: function () {
         return -new Date().getTimezoneOffset() / 60;
+      },
+      isWeekend: function (inTarget) {
+        var date = this.create(inTarget);
+        var day = date.getDay();
+        return day === 0 || day === 6;
       }
     }
   });

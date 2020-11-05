@@ -2,8 +2,8 @@
  * name: @feizheng/next-date
  * description: Enhanced date for next.
  * homepage: https://github.com/afeiship/next-date
- * version: 1.1.0
- * date: 2020-05-21T10:36:53.341Z
+ * version: 1.1.1
+ * date: 2020-11-05T06:30:14.300Z
  * license: MIT
  */
 
@@ -60,6 +60,11 @@
       },
       timezoneOffset: function () {
         return -new Date().getTimezoneOffset() / 60;
+      },
+      isWeekend: function (inTarget) {
+        var date = this.create(inTarget);
+        var day = date.getDay();
+        return day === 0 || day === 6;
       }
     }
   });
@@ -68,5 +73,3 @@
     module.exports = NxDate;
   }
 })();
-
-//# sourceMappingURL=next-date.js.map
