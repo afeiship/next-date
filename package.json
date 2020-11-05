@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/next-date",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Enhanced date for next.",
   "homepage": "https://github.com/afeiship/next-date",
   "author": {
@@ -37,5 +37,10 @@
   "dependencies": {
     "@feizheng/next-compare": "^1.0.2",
     "dateformat": "^3.0.3"
-  }
+  },
+  "keywords": [
+    "date",
+    "moment",
+    "next"
+  ]
 }
