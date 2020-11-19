@@ -38,5 +38,16 @@
   "dependencies": {
     "@jswork/next-compare": "^1.0.0",
     "dateformat": "^4.0.0"
-  }
+  },
+  "keywords": [
+    "date",
+    "next",
+    "tiny",
+    "momentjs",
+    "node",
+    "datetime",
+    "time",
+    "weekend",
+    "format"
+  ]
 }
