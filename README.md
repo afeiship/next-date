@@ -12,16 +12,38 @@ npm install -S @jswork/next-date
 ```
 
 ## apis
-| api | params | description   |
-|-----|--------|---------------|
-| get | -      | desc balabala |
+| api            | params | description           |
+| -------------- | ------ | --------------------- |
+| now            | -      | Get timestamp.        |
+| create         | -      | Create data instance. |
+| compare        | -      | Compare data.         |
+| format         | -      | Format date.          |
+| timezoneOffset | -      | Get timezone offset.  |
 
 ## usage
 ```js
-import NxDate from '@jswork/next-date';
+import NxDate from '@feizheng/next-date';
 
-// code goes here:
+//1. Timestamp:
+NxDate.now();
+
+//2. Get date instance:
+NxDate.create() 
+NxDate.create('2018-07-01 16:29:49');
+
+//3. Compare:
+NxDate.compare('2018-07-01 16:30:14','2018-07-01 16:30:19')
+// -1 | 0 | 1
+
+//4. format:
+NxDate.format(inTarget,'yyyy-mm-dd HH:MM:ss');
+
+// 5. timezone offset
+NxDate.timezoneOffset();
 ```
+
+## resources
+- https://github.com/felixge/node-dateformat
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/next-date/blob/master/LICENSE.txt).
