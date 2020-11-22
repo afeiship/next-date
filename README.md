@@ -22,7 +22,7 @@ npm install -S @jswork/next-date
 
 ## usage
 ```js
-import NxDate from '@feizheng/next-date';
+import NxDate from '@jswork/next-date';
 
 //1. Timestamp:
 NxDate.now();
