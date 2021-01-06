@@ -3,12 +3,12 @@
  * description: Enhanced date for next.
  * homepage: https://github.com/afeiship/next-date
  * version: 1.0.0
- * date: 2020-11-19 13:13:33
+ * date: 2021-01-06 20:30:39
  * license: MIT
  */
 
-(function() {
-  var global = global || this || window || Function('return this')();
+(function () {
+  var global = global || window || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var nxCompare = nx.compare || require('@jswork/next-compare');
   var dateFormat = require('dateformat');
