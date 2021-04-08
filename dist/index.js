@@ -3,7 +3,7 @@
  * description: Enhanced date for next.
  * homepage: https://github.com/afeiship/next-date
  * version: 1.0.2
- * date: 2021-01-09 16:27:45
+ * date: 2021-04-08 15:57:15
  * license: MIT
  */
 
@@ -57,6 +57,14 @@
       format: function (inTarget, inFmt) {
         var target = this.create(inTarget);
         return dateFormat(target, inFmt || DEFAULT_FORMAT);
+      },
+      dbdt: function () {
+        var monthFmt = 'yyyy-mm';
+        var fullFmt = 'yyyymmdd_HHMMss';
+        return {
+          monthly: this.format(null, monthFmt),
+          datetime: this.format(null, fullFmt)
+        };
       },
       timezoneOffset: function () {
         return -new Date().getTimezoneOffset() / 60;
