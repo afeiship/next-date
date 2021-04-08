@@ -2,8 +2,8 @@
  * name: @jswork/next-date
  * description: Enhanced date for next.
  * homepage: https://github.com/afeiship/next-date
- * version: 1.0.2
- * date: 2021-04-08 15:57:15
+ * version: 1.0.3
+ * date: 2021-04-08 15:58:23
  * license: MIT
  */
 
