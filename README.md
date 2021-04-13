@@ -43,6 +43,7 @@ NxDate.format(inTarget,'yyyy-mm-dd HH:MM:ss');
 NxDate.timezoneOffset();
 
 // 6. monthly/datetime
+{ monthly:'2021-04', datetime:'20210413_173013' }
 ```
 
 ## resources
