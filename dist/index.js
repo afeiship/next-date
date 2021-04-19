@@ -3,7 +3,7 @@
  * description: Enhanced date for next.
  * homepage: https://github.com/afeiship/next-date
  * version: 1.0.2
- * date: 2021-01-09 16:27:45
+ * date: 2021-04-19 19:37:23
  * license: MIT
  */
 
