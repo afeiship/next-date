@@ -1,7 +1,7 @@
-(function() {
+(function () {
   const NxDate = require('../src');
 
-  describe('NxDate.methods', function() {
+  describe('NxDate.methods', function () {
     describe('NxDate.methods', function () {
       test('date format', function () {
         var str = '2017-09-12 14:03:52';
@@ -56,6 +56,12 @@
         expect(NxDate.isWeekend(date1)).toBe(false);
         expect(NxDate.isWeekend(date2)).toBe(true);
         expect(NxDate.isWeekend(date3)).toBe(true);
+      });
+
+      test('dbdt should have month/full key', () => {
+        const { monthly, datetime } = NxDate.dbdt();
+        expect(typeof monthly === 'string').toBe(true);
+        expect(typeof datetime === 'string').toBe(true);
       });
     });
   });

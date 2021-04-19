@@ -12,13 +12,14 @@ npm install -S @jswork/next-date
 ```
 
 ## apis
-| api            | params | description           |
-| -------------- | ------ | --------------------- |
-| now            | -      | Get timestamp.        |
-| create         | -      | Create data instance. |
-| compare        | -      | Compare data.         |
-| format         | -      | Format date.          |
-| timezoneOffset | -      | Get timezone offset.  |
+| api            | params | description                   |
+| -------------- | ------ | ----------------------------- |
+| now            | -      | Get timestamp.                |
+| create         | -      | Create data instance.         |
+| compare        | -      | Compare data.                 |
+| format         | -      | Format date.                  |
+| timezoneOffset | -      | Get timezone offset.          |
+| dbdt           | -      | Get backup database datetime. |
 
 ## usage
 ```js
@@ -40,6 +41,9 @@ NxDate.format(inTarget,'yyyy-mm-dd HH:MM:ss');
 
 // 5. timezone offset
 NxDate.timezoneOffset();
+
+// 6. monthly/datetime
+// { monthly:'2021-04', datetime:'20210413_173013' }
 ```
 
 ## resources

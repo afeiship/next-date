@@ -49,6 +49,14 @@
         var target = this.create(inTarget);
         return dateFormat(target, inFmt || DEFAULT_FORMAT);
       },
+      dbdt: function () {
+        var monthFmt = 'yyyy-mm';
+        var fullFmt = 'yyyymmdd_HHMMss';
+        return {
+          monthly: this.format(null, monthFmt),
+          datetime: this.format(null, fullFmt)
+        };
+      },
       timezoneOffset: function () {
         return -new Date().getTimezoneOffset() / 60;
       },
