@@ -2,12 +2,28 @@
   const NxDate = require('../src');
 
   describe('NxDate.methods', function () {
+    test('get next/prev day/minute/week', () => {
+      var today = '2021-06-13 19:57:47';
+      var nextTs1 = NxDate.get(today, 1, 'day');
+      var nextTs2 = NxDate.get(today, 1, 'week');
+      var nextTs3 = NxDate.get(today, -1, 'day');
+      var nextTs4 = NxDate.get(today, -1, 'week');
+      var fmt1 = NxDate.format(nextTs1, 'yyyy-mm-dd');
+      var fmt2 = NxDate.format(nextTs2, 'yyyy-mm-dd');
+      var fmt3 = NxDate.format(nextTs3, 'yyyy-mm-dd');
+      var fmt4 = NxDate.format(nextTs4, 'yyyy-mm-dd');
+
+      expect(fmt1).toBe('2021-06-14');
+      expect(fmt2).toBe('2021-06-20');
+      expect(fmt3).toBe('2021-06-12');
+      expect(fmt4).toBe('2021-06-06');
+    });
     test('const support week/day/hour/minute/second', () => {
       expect(NxDate.WEEK).toBe(7 * 24 * 3600 * 1000);
       expect(NxDate.DAY).toBe(1 * 24 * 3600 * 1000);
       expect(NxDate.HOUR).toBe(1 * 3600 * 1000);
-      expect(NxDate.MIN).toBe(60 * 1000);
-      expect(NxDate.SEC).toBe(1000);
+      expect(NxDate.MINUTE).toBe(60 * 1000);
+      expect(NxDate.SECOND).toBe(1000);
     });
     test('date format', function () {
       var str = '2017-09-12 14:03:52';

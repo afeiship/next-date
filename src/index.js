@@ -25,8 +25,15 @@
       WEEK: 6048e5,
       DAY: 864e5,
       HOUR: 36e5,
-      MIN: 6e4,
-      SEC: 1e3,
+      MINUTE: 6e4,
+      SECOND: 1e3,
+      get: function (inTarget, inNum, inUnit) {
+        var unit = inUnit.toUpperCase();
+        var ts = this[unit] * inNum;
+        var target = this.create(inTarget);
+        var nowTs = target.getTime();
+        return nowTs + ts;
+      },
       now: function () {
         return Date.now() || +new Date();
       },

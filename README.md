@@ -12,14 +12,15 @@ npm install -S @jswork/next-date
 ```
 
 ## apis
-| api            | params | description                   |
-| -------------- | ------ | ----------------------------- |
-| now            | -      | Get timestamp.                |
-| create         | -      | Create data instance.         |
-| compare        | -      | Compare data.                 |
-| format         | -      | Format date.                  |
-| timezoneOffset | -      | Get timezone offset.          |
-| dbdt           | -      | Get backup database datetime. |
+| api            | params | description                                            |
+| -------------- | ------ | ------------------------------------------------------ |
+| get            | -      | Get timestamp at current date, for next/previous case. |
+| now            | -      | Get timestamp.                                         |
+| create         | -      | Create data instance.                                  |
+| compare        | -      | Compare data.                                          |
+| format         | -      | Format date.                                           |
+| timezoneOffset | -      | Get timezone offset.                                   |
+| dbdt           | -      | Get backup database datetime.                          |
 
 
 ## consts
