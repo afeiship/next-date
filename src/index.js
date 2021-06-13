@@ -22,6 +22,11 @@
 
   var NxDate = nx.declare('nx.Date', {
     statics: {
+      WEEK: 6048e5,
+      DAY: 864e5,
+      HOUR: 36e5,
+      MIN: 6e4,
+      SEC: 1e3,
       now: function () {
         return Date.now() || +new Date();
       },

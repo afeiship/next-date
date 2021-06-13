@@ -2,6 +2,13 @@
   const NxDate = require('../src');
 
   describe('NxDate.methods', function () {
+    test('const support week/day/hour/minute/second', () => {
+      expect(NxDate.WEEK).toBe(7 * 24 * 3600 * 1000);
+      expect(NxDate.DAY).toBe(1 * 24 * 3600 * 1000);
+      expect(NxDate.HOUR).toBe(1 * 3600 * 1000);
+      expect(NxDate.MIN).toBe(60 * 1000);
+      expect(NxDate.SEC).toBe(1000);
+    });
     test('date format', function () {
       var str = '2017-09-12 14:03:52';
       expect(NxDate.format(str, 'isoDate')).toBe('2017-09-12');
@@ -10,13 +17,13 @@
       expect(NxDate.format(str)).toBe('2017-09-12 14:03:52');
     });
 
-    test('data support number input', ()=>{
-      var ts = 1623553685994
+    test('data support number input', () => {
+      var ts = 1623553685994;
       var str1 = NxDate.format(ts, 'isoDate');
       var str2 = NxDate.format(ts, 'isoTime');
       expect(str1).toBe('2021-06-13');
       expect(str2).toBe('11:08:05');
-    })
+    });
 
     test('date 2016-02-28T00:00:00 ', function () {
       var str = '2016-02-28T00:00:00';

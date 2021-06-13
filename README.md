@@ -21,6 +21,16 @@ npm install -S @jswork/next-date
 | timezoneOffset | -      | Get timezone offset.          |
 | dbdt           | -      | Get backup database datetime. |
 
+
+## consts
+| name   | description |
+| ------ | ----------- |
+| week   | WEEK        |
+| day    | DAY         |
+| hour   | HOUR        |
+| minute | MIUNTE      |
+| second | SECOND      |
+
 ## usage
 ```js
 import NxDate from '@jswork/next-date';
