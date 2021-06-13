@@ -37,9 +37,6 @@
         var targetTs = nowTs + ts;
         return options.format ? this.format(targetTs, options.format) : targetTs;
       },
-      now: function () {
-        return Date.now() || +new Date();
-      },
       create: function (inTarget) {
         switch (true) {
           case inTarget instanceof Date:
