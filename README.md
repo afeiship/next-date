@@ -55,6 +55,18 @@ NxDate.timezoneOffset();
 
 // 6. monthly/datetime
 // { monthly:'2021-04', datetime:'20210413_173013' }
+
+// 7. get formated date
+const options = { target: today, format: 'yyyy-mm-dd' };
+const fmt1 = NxDate.get(1, 'day', options);
+const fmt2 = NxDate.get(1, 'week', options);
+const fmt3 = NxDate.get(-1, 'day', options);
+const fmt4 = NxDate.get(-1, 'week', options);
+
+// '2021-06-14'
+// '2021-06-20'
+// '2021-06-12'
+// '2021-06-06'
 ```
 
 ## resources

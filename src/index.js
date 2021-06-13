@@ -8,6 +8,7 @@
   var STRING = 'string';
   var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
   var INVALID_DATE = 'Invalid Date';
+  var GET_OPTIONS = { format: DEFAULT_FORMAT, target: null };
 
   /**
    * dateStr.replace(/\s/g,'T').replace(/\//g,'-');
@@ -27,12 +28,14 @@
       HOUR: 36e5,
       MINUTE: 6e4,
       SECOND: 1e3,
-      get: function (inTarget, inNum, inUnit) {
+      get: function (inNum, inUnit, inOptions) {
+        var options = nx.mix(null, GET_OPTIONS, inOptions);
         var unit = inUnit.toUpperCase();
         var ts = this[unit] * inNum;
-        var target = this.create(inTarget);
+        var target = this.create(options.target);
         var nowTs = target.getTime();
-        return nowTs + ts;
+        var targetTs = nowTs + ts;
+        return options.format ? this.format(targetTs, options.format) : targetTs;
       },
       now: function () {
         return Date.now() || +new Date();
@@ -41,9 +44,8 @@
         switch (true) {
           case inTarget instanceof Date:
             return inTarget;
-          case typeof inTarget === 'number':
-            return new Date(inTarget);
           case typeof inTarget === STRING:
+          case typeof inTarget === 'number':
             var date = new Date(inTarget);
             return date.toString() === INVALID_DATE
               ? new Date(inTarget.replace(REPLACE_RE, DATE_DASH))

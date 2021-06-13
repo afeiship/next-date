@@ -4,14 +4,11 @@
   describe('NxDate.methods', function () {
     test('get next/prev day/minute/week', () => {
       var today = '2021-06-13 19:57:47';
-      var nextTs1 = NxDate.get(today, 1, 'day');
-      var nextTs2 = NxDate.get(today, 1, 'week');
-      var nextTs3 = NxDate.get(today, -1, 'day');
-      var nextTs4 = NxDate.get(today, -1, 'week');
-      var fmt1 = NxDate.format(nextTs1, 'yyyy-mm-dd');
-      var fmt2 = NxDate.format(nextTs2, 'yyyy-mm-dd');
-      var fmt3 = NxDate.format(nextTs3, 'yyyy-mm-dd');
-      var fmt4 = NxDate.format(nextTs4, 'yyyy-mm-dd');
+      var options = { target: today, format: 'yyyy-mm-dd' };
+      var fmt1 = NxDate.get(1, 'day', options);
+      var fmt2 = NxDate.get(1, 'week', options);
+      var fmt3 = NxDate.get(-1, 'day', options);
+      var fmt4 = NxDate.get(-1, 'week', options);
 
       expect(fmt1).toBe('2021-06-14');
       expect(fmt2).toBe('2021-06-20');
