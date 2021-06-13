@@ -29,6 +29,8 @@
         switch (true) {
           case inTarget instanceof Date:
             return inTarget;
+          case typeof inTarget === 'number':
+            return new Date(inTarget);
           case typeof inTarget === STRING:
             var date = new Date(inTarget);
             return date.toString() === INVALID_DATE

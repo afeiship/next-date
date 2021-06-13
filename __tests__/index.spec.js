@@ -10,6 +10,14 @@
       expect(NxDate.format(str)).toBe('2017-09-12 14:03:52');
     });
 
+    test('data support number input', ()=>{
+      var ts = 1623553685994
+      var str1 = NxDate.format(ts, 'isoDate');
+      var str2 = NxDate.format(ts, 'isoTime');
+      expect(str1).toBe('2021-06-13');
+      expect(str2).toBe('11:08:05');
+    })
+
     test('date 2016-02-28T00:00:00 ', function () {
       var str = '2016-02-28T00:00:00';
       expect(NxDate.format(str, 'isoDate')).toBe('2016-02-28');
