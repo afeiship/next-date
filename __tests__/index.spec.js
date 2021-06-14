@@ -2,6 +2,14 @@
   const NxDate = require('../src');
 
   describe('NxDate.methods', function () {
+    test('format with short marks', ()=>{
+      var today = '2021-06-14 07:48:50';
+      expect(NxDate.format(today, 'datetime')).toBe('2021-06-14 07:48:50');
+      expect(NxDate.format(today, 'date')).toBe('2021-06-14');
+      expect(NxDate.format(today, 'time')).toBe('07:48:50');
+      expect(NxDate.format(today, 'dbdt')).toBe('20210614_074850');
+    });
+
     test('get next/prev day/minute/week', () => {
       var today = '2021-06-13 19:57:47';
       var options = { target: today, format: 'yyyy-mm-dd' };
@@ -82,12 +90,6 @@
       expect(NxDate.isWeekend(date1)).toBe(false);
       expect(NxDate.isWeekend(date2)).toBe(true);
       expect(NxDate.isWeekend(date3)).toBe(true);
-    });
-
-    test('dbdt should have month/full key', () => {
-      const { monthly, datetime } = NxDate.dbdt();
-      expect(typeof monthly === 'string').toBe(true);
-      expect(typeof datetime === 'string').toBe(true);
     });
   });
 })();

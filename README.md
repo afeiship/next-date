@@ -19,7 +19,6 @@ npm install -S @jswork/next-date
 | compare        | -      | Compare data.                                          |
 | format         | -      | Format date.                                           |
 | timezoneOffset | -      | Get timezone offset.                                   |
-| dbdt           | -      | Get backup database datetime.                          |
 
 
 ## consts
@@ -52,10 +51,7 @@ NxDate.format(inTarget,'yyyy-mm-dd HH:MM:ss');
 // 5. timezone offset
 NxDate.timezoneOffset();
 
-// 6. monthly/datetime
-// { monthly:'2021-04', datetime:'20210413_173013' }
-
-// 7. get formated date
+// 6. get formated date
 const options = { target: today, format: 'yyyy-mm-dd' };
 const fmt1 = NxDate.get(1, 'day', options);
 const fmt2 = NxDate.get(1, 'week', options);

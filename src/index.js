@@ -2,13 +2,21 @@
   var global = typeof window !== 'undefined' ? window : this || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var nxCompare = nx.compare || require('@jswork/next-compare');
-  var dateFormat = require('dateformat');
+  var dateFormat = global.dateFormat || require('dateformat');
   var REPLACE_RE = /-/g;
   var DATE_DASH = '/';
   var STRING = 'string';
   var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
   var INVALID_DATE = 'Invalid Date';
   var GET_OPTIONS = { format: DEFAULT_FORMAT, target: null };
+
+  nx.mix(dateFormat.masks, {
+    datetime: DEFAULT_FORMAT,
+    date: 'yyyy-mm-dd',
+    time: 'HH:MM:ss',
+    month: 'yyyy-mm',
+    dbdt: 'yyyymmdd_HHMMss'
+  });
 
   /**
    * dateStr.replace(/\s/g,'T').replace(/\//g,'-');
@@ -61,14 +69,6 @@
       format: function (inTarget, inFmt) {
         var target = this.create(inTarget);
         return dateFormat(target, inFmt || DEFAULT_FORMAT);
-      },
-      dbdt: function () {
-        var monthFmt = 'yyyy-mm';
-        var fullFmt = 'yyyymmdd_HHMMss';
-        return {
-          monthly: this.format(null, monthFmt),
-          datetime: this.format(null, fullFmt)
-        };
       },
       timezoneOffset: function () {
         return -new Date().getTimezoneOffset() / 60;
