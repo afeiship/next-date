@@ -5,7 +5,8 @@
   var dateFormat = global.dateFormat || require('dateformat');
   var REPLACE_RE = /-/g;
   var DATE_DASH = '/';
-  var STRING = 'string';
+  var STR = 'string';
+  var NUM = 'number';
   var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
   var INVALID_DATE = 'Invalid Date';
   var GET_OPTIONS = { format: DEFAULT_FORMAT, target: null };
@@ -49,8 +50,8 @@
         switch (true) {
           case inTarget instanceof Date:
             return inTarget;
-          case typeof inTarget === STRING:
-          case typeof inTarget === 'number':
+          case typeof inTarget === STR:
+          case typeof inTarget === NUM:
             var date = new Date(inTarget);
             return date.toString() === INVALID_DATE
               ? new Date(inTarget.replace(REPLACE_RE, DATE_DASH))
