@@ -46,6 +46,9 @@
         var targetTs = nowTs + ts;
         return options.format ? this.format(targetTs, options.format) : targetTs;
       },
+      gets: function (inNums, inUnit, inOptions) {
+        return inNums.map((num) => this.get(num, inUnit, inOptions));
+      },
       create: function (inTarget) {
         switch (true) {
           case inTarget instanceof Date:

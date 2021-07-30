@@ -2,7 +2,7 @@
   const NxDate = require('../src');
 
   describe('NxDate.methods', function () {
-    test('format with short marks', ()=>{
+    test('format with short marks', () => {
       var today = '2021-06-14 07:48:50';
       expect(NxDate.format(today, 'datetime')).toBe('2021-06-14 07:48:50');
       expect(NxDate.format(today, 'date')).toBe('2021-06-14');
@@ -13,16 +13,28 @@
     test('get next/prev day/minute/week', () => {
       var today = '2021-06-13 19:57:47';
       var options = { target: today, format: 'yyyy-mm-dd' };
+      var fmt0 = NxDate.get(0, 'day', options);
       var fmt1 = NxDate.get(1, 'day', options);
       var fmt2 = NxDate.get(1, 'week', options);
       var fmt3 = NxDate.get(-1, 'day', options);
       var fmt4 = NxDate.get(-1, 'week', options);
 
+      expect(fmt0).toBe('2021-06-13');
       expect(fmt1).toBe('2021-06-14');
       expect(fmt2).toBe('2021-06-20');
       expect(fmt3).toBe('2021-06-12');
       expect(fmt4).toBe('2021-06-06');
     });
+
+    test('gets prev/today/next', () => {
+      var today = '2021-07-31 19:57:47';
+      var targets = NxDate.gets([-1, 0, 1], 'day', { target: today, format: 'date' });
+
+      expect(targets).toEqual(
+        ['2021-07-30', '2021-07-31', '2021-08-01']
+      );
+    });
+
     test('const support week/day/hour/minute/second', () => {
       expect(NxDate.WEEK).toBe(7 * 24 * 3600 * 1000);
       expect(NxDate.DAY).toBe(1 * 24 * 3600 * 1000);

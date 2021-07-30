@@ -15,6 +15,7 @@ npm install -S @jswork/next-date
 | api            | params | description                                            |
 | -------------- | ------ | ------------------------------------------------------ |
 | get            | -      | Get timestamp at current date, for next/previous case. |
+| gets           | -      | Get multiple dates.                                    |
 | create         | -      | Create data instance.                                  |
 | compare        | -      | Compare data.                                          |
 | format         | -      | Format date.                                           |
@@ -62,6 +63,12 @@ const fmt4 = NxDate.get(-1, 'week', options);
 // '2021-06-20'
 // '2021-06-12'
 // '2021-06-06'
+
+// 7.get multiple dates use one api.
+const today = '2021-07-31 19:57:47';
+const targets = NxDate.gets([-1, 0, 1], 'day', { target: today, format: 'date' });
+
+// ['2021-07-30', '2021-07-31', '2021-08-01']
 ```
 
 ## resources
