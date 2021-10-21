@@ -14,6 +14,7 @@ npm install -S @jswork/next-date
 ## apis
 | api            | params | description                                            |
 | -------------- | ------ | ------------------------------------------------------ |
+| apm            | -      | Get is AM/PM.                                          |
 | get            | -      | Get timestamp at current date, for next/previous case. |
 | gets           | -      | Get multiple dates.                                    |
 | create         | -      | Create data instance.                                  |
