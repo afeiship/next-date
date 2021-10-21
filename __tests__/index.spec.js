@@ -2,6 +2,13 @@
   const NxDate = require('../src');
 
   describe('NxDate.methods', function () {
+    test('apm', ()=>{
+      const time1 = '2021-10-21 10:14:38';;
+      const time2 = '2021-10-21 15:14:38';;
+
+      expect(NxDate.apm(time1)).toBe('AM');
+      expect(NxDate.apm(time2)).toBe('PM');
+    })
     test('format with short marks', () => {
       var today = '2021-06-14 07:48:50';
       expect(NxDate.format(today, 'datetime')).toBe('2021-06-14 07:48:50');

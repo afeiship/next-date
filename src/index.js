@@ -37,6 +37,10 @@
       HOUR: 36e5,
       MINUTE: 6e4,
       SECOND: 1e3,
+      apm: function (inDate) {
+        var date = this.create(inDate);
+        return date.toLocaleString([], { hour12: true }).slice(-2);
+      },
       get: function (inNum, inUnit, inOptions) {
         var options = nx.mix(null, GET_OPTIONS, inOptions);
         var unit = inUnit.toUpperCase();
