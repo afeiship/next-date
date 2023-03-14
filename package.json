@@ -11,7 +11,8 @@
     "build": "gulp",
     "test": "jest",
     "start": "node ./express.js",
-    "release": "release-it"
+    "release": "release-it",
+    "postrelease": "cnpm sync `npm pkg get name`"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
