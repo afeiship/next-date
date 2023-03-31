@@ -8,17 +8,15 @@
   });
 
   gulp.task('scripts:main', function () {
-    return (
-      gulp
-        .src('src/*.js')
-        .pipe($.insert.wrap(`(function () {`, '})();'))
-        .pipe($.prettier())
-        // .pipe($.babel())
-        .pipe($.jswork.pkgHeader())
-        .pipe(gulp.dest('dist'))
-        .pipe($.size({ title: '[ default size ]:' }))
-        .pipe($.uglify({ output: { comments: saveLicense } }))
-    );
+    return gulp
+      .src('src/*.js')
+      .pipe($.babel())
+      .pipe($.jswork.pkgHeader())
+      // .pipe($.insert.wrap(`(function () {`, '})();'))
+      .pipe($.prettier())
+      .pipe(gulp.dest('dist'))
+      .pipe($.size({ title: '[ default size ]:' }))
+      .pipe($.uglify({ output: { comments: saveLicense } }));
   });
 
   gulp.task('scripts:esm', () => {

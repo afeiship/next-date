@@ -1,14 +1,15 @@
-var global = typeof window !== 'undefined' ? window : this || Function('return this')();
-var nx = global.nx || require('@jswork/next');
-var nxCompare = nx.compare || require('@jswork/next-compare');
-var dateFormat = global.dateFormat || require('dateformat');
-var REPLACE_RE = /-/g;
-var DATE_DASH = '/';
-var STR = 'string';
-var NUM = 'number';
-var DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
-var INVALID_DATE = 'Invalid Date';
-var GET_OPTIONS = { format: DEFAULT_FORMAT, target: null };
+const global = typeof window !== 'undefined' ? window : this || Function('return this')();
+import nx from '@jswork/next';
+import '@jswork/next-compare';
+import dateFormat from  'dateformat';
+
+const REPLACE_RE = /-/g;
+const DATE_DASH = '/';
+const STR = 'string';
+const NUM = 'number';
+const DEFAULT_FORMAT = 'yyyy-mm-dd HH:MM:ss';
+const INVALID_DATE = 'Invalid Date';
+const GET_OPTIONS = { format: DEFAULT_FORMAT, target: null };
 
 nx.mix(dateFormat.masks, {
   datetime: DEFAULT_FORMAT,
