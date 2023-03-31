@@ -92,4 +92,4 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = NxDate;
 }
 
-export default NxDate;
+// export default NxDate;

@@ -1,3 +1,3 @@
 interface NxStatic {
-  Date: any;
+  // your codes goes here.
 }
