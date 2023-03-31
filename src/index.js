@@ -1,7 +1,6 @@
-const global = typeof window !== 'undefined' ? window : this || Function('return this')();
 import nx from '@jswork/next';
+import dateFormat from 'dateformat';
 import '@jswork/next-compare';
-import dateFormat from  'dateformat';
 
 const REPLACE_RE = /-/g;
 const DATE_DASH = '/';
@@ -30,7 +29,7 @@ nx.mix(dateFormat.masks, {
  * safari invalid date
  */
 
-var NxDate = nx.declare('nx.Date', {
+const NxDate = nx.declare('nx.Date', {
   statics: {
     WEEK: 6048e5,
     DAY: 864e5,
@@ -92,3 +91,5 @@ var NxDate = nx.declare('nx.Date', {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = NxDate;
 }
+
+export default NxDate;
