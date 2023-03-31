@@ -72,7 +72,7 @@ var NxDate = nx.declare('nx.Date', {
     compare: function (inTarget1, inTarget2) {
       var timestamp1 = +this.create(inTarget1);
       var timestamp2 = +this.create(inTarget2);
-      return nxCompare(timestamp1, timestamp2);
+      return nx.compare(timestamp1, timestamp2);
     },
     format: function (inTarget, inFmt) {
       var target = this.create(inTarget);
