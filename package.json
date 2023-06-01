@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-date",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Enhanced date for next.",
   "homepage": "https://js.work",
   "author": {
@@ -47,5 +47,16 @@
   "dependencies": {
     "@jswork/next-compare": "^1.0.3",
     "dateformat": "4"
-  }
+  },
+  "keywords": [
+    "date",
+    "next",
+    "tiny",
+    "momentjs",
+    "node",
+    "datetime",
+    "time",
+    "weekend",
+    "format"
+  ]
 }
