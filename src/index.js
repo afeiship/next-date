@@ -88,7 +88,7 @@ const NxDate = nx.declare('nx.Date', {
   }
 });
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
   module.exports = NxDate;
 }
 
